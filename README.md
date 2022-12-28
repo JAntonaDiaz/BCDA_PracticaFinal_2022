@@ -1,1 +1,1 @@
-# BCDA_PracticaFinal_2022
+# Caso de Estudio: Asignatura Lite 2022.
