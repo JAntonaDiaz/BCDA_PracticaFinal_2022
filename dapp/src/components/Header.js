@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <header className="AppHeader">
             <h1>
-                Asignatura Lite: {nombre}-<em>{curso}</em>
+                Asignatura Full: {nombre}-<em>{curso}</em>
             </h1>
         </header>
     );

@@ -10,6 +10,7 @@ import AlumnoDetail from "./alumnos/AlumnoDetail";
 import CalificacionesPage from "./calificaciones/CalificacionesPage";
 import MisCosasPage from "./misCosas/MisCosasPage";
 import NoMatch from './NoMatch';
+import ProfesoresPage from "./profesores/ProfesoresPage";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                         <Route path="/" element={<Layout/>}>
                             <Route index element={<HomePage/>}/>
                             <Route path="evaluaciones" element={<EvaluacionesPage/>}/>
+                            <Route path="profesores" element={<ProfesoresPage/>}/>
                             <Route path="alumnos" element={<AlumnosPage/>}/>
                             <Route path="alumnos/:addr" element={<AlumnoDetail/>}/>
                             <Route path="calificaciones" element={<CalificacionesPage/>}/>
