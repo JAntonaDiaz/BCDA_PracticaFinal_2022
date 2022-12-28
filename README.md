@@ -1,1 +1,1 @@
-# Caso de Estudio: Asignatura Lite 2022.
+# Caso de Estudio: Asignatura Full 2022.
