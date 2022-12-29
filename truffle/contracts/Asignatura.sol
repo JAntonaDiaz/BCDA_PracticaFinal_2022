@@ -207,6 +207,23 @@ array.
  }
 
  /**
+  * FUNCION AÑADIDA PARA LA PRACTICA 7
+  *  
+  * Editar una prueba de evaluacion de la asignatura. 
+  *  
+  * @param _id El indice de la evaluacion en el array de Evaluaciones.
+  * @param _nombre El nuevo nombre de la evaluacion.
+  * @param _fecha La nueva fecha de evaluación.
+  * @param _porcentaje El nuevo porcentaje de puntos que se proporciona a la nota final.
+  * @param _minimo El nuevo minimo de puntos que se necesita para superar la evaluacion.
+  */
+
+  function editarEvaluacion(uint _id, string memory _nombre, uint _fecha, uint _porcentaje, uint _minimo) soloCoordinador soloAbierta public {
+    require(bytes(_nombre).length != 0, "El nombre de la evaluacion no puede ser vacio");
+    evaluaciones[_id] = Evaluacion(_nombre, _fecha, _porcentaje, _minimo);
+  }
+
+ /**
  * El numero de evaluaciones creadas.
  *
  * @return El numero de evaluaciones creadas.

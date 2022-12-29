@@ -2,7 +2,7 @@ import {drizzleReactHooks} from '@drizzle/react-plugin'
 import { useState } from 'react';
 import {useParams, Link} from "react-router-dom";
 
-const {useDrizzle, useDrizzleState} = drizzleReactHooks;
+const {useDrizzle} = drizzleReactHooks;
 
 
 const EvaluacionEdit = () => {
@@ -11,24 +11,17 @@ const EvaluacionEdit = () => {
     let {id} = useParams();
 
     const datos = useCacheCall("Asignatura", "evaluaciones", id);
-    const drizzleState = useDrizzleState(state => state);
-    const myAddr = drizzleState.accounts[0];
 
     let [nombreEvalNew, setNombreEvalNew] = useState(datos.nombre);
     let [fechaEvalNew, setFechaEvalNew] = useState(datos.fecha);
     let [porcentajeEvalNew, setPorcentajeEvalNew] = useState(datos.porcentaje);
     let [minimoEvalNew, setMinimoEvalNew] = useState(datos.minimo);
 
-    const {send: sendEditEval, status: statusEditEval} = useCacheSend("Asignatura", "evaluaciones", id);
+    const {send: sendEditEval, status: statusEditEval} = useCacheSend("Asignatura", "editarEvaluacion");
 
     const editEvaluacion = ev => {
         ev.preventDefault();
-        datos.nombre = nombreEvalNew;
-        datos.fecha = fechaEvalNew;
-        datos.porcentaje = porcentajeEvalNew;
-        datos.minimo = minimoEvalNew;
-        console.log(sendEditEval(datos, {from: myAddr}))
-        sendEditEval(datos, {from: myAddr});
+        sendEditEval(id, nombreEvalNew, fechaEvalNew, porcentajeEvalNew, minimoEvalNew);
     }
 
     return (
@@ -85,9 +78,10 @@ const EvaluacionEdit = () => {
                                 type="button"
                                 className="pure-button" 
                                 onClick={ev => editEvaluacion(ev)}>
-                        <Link to="/evaluaciones">Guardar</Link>
+                        Guardar
                         </button>
                     </p>
+                    <Link to="/evaluaciones">Volver</Link>
                 </form>
     </section>
     );
