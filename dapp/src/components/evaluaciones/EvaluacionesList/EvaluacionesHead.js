@@ -7,6 +7,7 @@ const EvaluacionesHead = () =>
         <th>Fecha</th>
         <th>%</th>
         <th>Mínimo</th>
+        <th>Editar</th>
     </tr>
     </thead>;
 
