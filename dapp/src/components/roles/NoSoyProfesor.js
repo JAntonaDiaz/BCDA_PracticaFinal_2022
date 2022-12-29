@@ -2,7 +2,7 @@ import {drizzleReactHooks} from '@drizzle/react-plugin'
 
 const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
-const SoyProfesor = ({children}) => {
+const NoSoyProfesor = ({children}) => {
 
     const {useCacheCall} = useDrizzle();
     const drizzleState = useDrizzleState(state => state);
@@ -13,13 +13,12 @@ const SoyProfesor = ({children}) => {
     const nombreProfesor = useCacheCall("Asignatura", "datosProfesor", myAddr);
 
     if(nombreProfesor !== ""){
-        return <>
-            {children}
-        </>
+        return null;
     }
 
-    return null;
-
+    return <>
+        {children}
+    </>
 };
 
-export default SoyProfesor;
+export default NoSoyProfesor;

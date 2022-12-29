@@ -2,7 +2,7 @@ import {drizzleReactHooks} from '@drizzle/react-plugin'
 
 const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
-const SoyAlumno = ({children}) => {
+const NoSoyAlumno = ({children}) => {
 
     const {useCacheCall} = useDrizzle();
     const drizzleState = useDrizzleState(state => state);
@@ -22,12 +22,12 @@ const SoyAlumno = ({children}) => {
     });
 
     if (show) {
-        return <>
-            {children}
-        </>
+        return null;
     }
 
-    return null;
+    return <>
+            {children}
+        </>
 };
 
-export default SoyAlumno;
+export default NoSoyAlumno;

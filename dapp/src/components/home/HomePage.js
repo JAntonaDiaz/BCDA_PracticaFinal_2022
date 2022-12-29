@@ -20,7 +20,6 @@ function HomePage() {
 
     const setCoordinador = ev => {
         ev.preventDefault();
-        console.log(stateAddrCoord);
         sendCoordinador(stateAddrCoord);
     }
 

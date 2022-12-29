@@ -1,25 +1,22 @@
+
 import {drizzleReactHooks} from '@drizzle/react-plugin'
 
 const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
-const SoyProfesor = ({children}) => {
-
+const NoSoyCoordinador = ({children}) => {
     const {useCacheCall} = useDrizzle();
     const drizzleState = useDrizzleState(state => state);
 
-    const myAddr = drizzleState.accounts[0];
+    const coordinadorAddr = useCacheCall("Asignatura", "coordinador");
 
-
-    const nombreProfesor = useCacheCall("Asignatura", "datosProfesor", myAddr);
-
-    if(nombreProfesor !== ""){
+    if (coordinadorAddr !== drizzleState.accounts[0]) {
         return <>
             {children}
         </>
     }
-
+   
     return null;
 
 };
 
-export default SoyProfesor;
+export default NoSoyCoordinador;
