@@ -2,7 +2,7 @@ import {useState} from "react";
 
 import {drizzleReactHooks} from '@drizzle/react-plugin'
 
-import SoyProfesor from "../roles/SoyOwner";
+import SoyProfesor from "../roles/SoyProfesor";
 
 const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 

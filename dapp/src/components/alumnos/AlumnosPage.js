@@ -6,6 +6,7 @@ import NoSoyOwner from "../roles/NoSoyOwner";
 import NoSoyCoordinador from "../roles/NoSoyCoordinador";
 import NoSoyProfesor from "../roles/NoSoyProfesor";
 import NoSoyAlumno from "../roles/NoSoyAlumno";
+import SoyOwnerCoordinadoroProfesor from "../roles/SoyOwnerCoordinadoroProfesor";
 
 const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
@@ -83,8 +84,10 @@ const AlumnosPage = () => {
             </NoSoyCoordinador>
             </NoSoyOwner>
             </NoSoyAlumno>
+            <SoyOwnerCoordinadoroProfesor>
+                <AlumnosList/>
+            </SoyOwnerCoordinadoroProfesor>
 
-            <AlumnosList/>
         </section>
     );
 }

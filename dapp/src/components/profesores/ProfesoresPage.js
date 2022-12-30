@@ -23,7 +23,7 @@ const ProfesoresPage = () => {
     return (
         <section className="AppAlumnos">
             <h2>Profesores</h2>
-
+            
             <ProfesoresList/>
 
             <SoyOwner>
