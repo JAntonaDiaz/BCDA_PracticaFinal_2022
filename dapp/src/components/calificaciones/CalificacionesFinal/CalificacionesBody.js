@@ -4,12 +4,14 @@ import CalificacionRow from "./CalificacionRow";
 
 const {useDrizzle} = drizzleReactHooks;
 
-const CalificacionesBody = ({indexEval}) => {
+const CalificacionesBody = () => { 
     const {useCacheCall} = useDrizzle();
-    const alumnoslength = useCacheCall("Asignatura", "matriculasLength");
+
+    const ml = useCacheCall("Asignatura", "matriculasLength") || 0;  //numero de personas matriculadas
+
     let rows = [];
-    for (let i = 0; i < alumnoslength; i++) {
-        rows.push(<CalificacionRow key={"ce19-"+i} alumnoIndex={i} indexEval={indexEval}/>);
+    for (let i = 0; i < ml; i++) {
+        rows.push(<CalificacionRow key={"cb-"+i} alumnoIndex={i}/>); //enviamos key y alumnoIndex (1,2,3...)
     }
 
     return <tbody>{rows}</tbody>;

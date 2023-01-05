@@ -12,17 +12,15 @@ const CalificacionesEvalPage = () => {
     const evaluacionesLength = useCacheCall("Asignatura", "evaluacionesLength");
 
     // Conservar los valores metidos en el formulario
-    let [indexEval, setEvalIndex] = useState("");
+    let [indexEval, setEvalIndex] = useState(0);
 
     const getEvaluacion = ev => {
-        setEvalIndex(ev.target.value)
-        if (indexEval >= evaluacionesLength){
-            document.getElementById("incumplido").innerHTML = 'Esta evaluación no está disponible. Inserte una evaluación correcta < '+ evaluacionesLength;
-        }
+        setEvalIndex(parseInt(ev.target.value));
     }
+
     return (
         <section className="EvalCalificaciones">
-            <h2>Selecciona el índice de la evaluación que desea visualizar</h2>
+            <h3>Selecciona el índice de la evaluación que desea visualizar</h3>
             <form>
                 <p>
                     Índice de la Evaluación:  &nbsp;
@@ -32,13 +30,17 @@ const CalificacionesEvalPage = () => {
                 </p>
                 </form>
 
-            <div>
-                <h1 id="incumplido"></h1>   
-                <h3>Calificaciones de la evaluación {indexEval}</h3>
-                <table>
-                    <CalificacionesHead />
-                    <CalificacionesBody indexEval={indexEval}/>
-                </table>
+            <div>   
+                { (indexEval < evaluacionesLength && indexEval >= 0) ? 
+                  <>
+                    <h3>Calificaciones de la evaluación {indexEval}</h3>
+                    <table>
+                        <CalificacionesHead />
+                        <CalificacionesBody indexEval={indexEval}/>
+                    </table>
+                  </>
+                  : <p> Esta evaluación no está disponible. Inserte una evaluación entre 0 y {evaluacionesLength-1}. </p>
+                }
             </div> 
         </section>
     );

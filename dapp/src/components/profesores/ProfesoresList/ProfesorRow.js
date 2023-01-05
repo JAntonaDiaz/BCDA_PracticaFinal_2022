@@ -8,8 +8,8 @@ const ProfesorRow = ({indexProfesor}) => {
         call => profesorAddress && call("Asignatura", "datosProfesor", profesorAddress));
 
     return <tr key={"P-" + indexProfesor}>
-            <td>{profesor}</td>
             <td>{indexProfesor +1}</td>
+            <td>{profesor}</td>
         </tr>;
 };
 

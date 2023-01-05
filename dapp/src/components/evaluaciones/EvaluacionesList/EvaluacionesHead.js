@@ -1,3 +1,4 @@
+import SoyCoordinador from "../../roles/SoyCoordinador";
 
 const EvaluacionesHead = () =>
     <thead>
@@ -7,7 +8,9 @@ const EvaluacionesHead = () =>
         <th>Fecha</th>
         <th>%</th>
         <th>Mínimo</th>
+        <SoyCoordinador>
         <th>Editar</th>
+        </SoyCoordinador>
     </tr>
     </thead>;
 

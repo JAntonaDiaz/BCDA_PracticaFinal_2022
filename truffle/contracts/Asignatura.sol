@@ -288,7 +288,7 @@ function miNotaFinal() soloMatriculados public view returns (TipoNota tipo, uint
 * @return calificacion la calificacion que ha sacado el alumno
  */
 
- function notaFinal(address _addr) soloCoordinador public view returns (TipoNota tipo, uint calificacion) {
+ function notaFinal(address _addr) soloCoordinadorProfesor public view returns (TipoNota tipo, uint calificacion) {
     return _notaFinal(_addr);
  }
 
@@ -394,6 +394,19 @@ function miNotaFinal() soloMatriculados public view returns (TipoNota tipo, uint
  modifier soloAbierta() {
  require(!cerrada, "Solo permitido si la asignatura no esta cerrada");
  _;
+ }
+
+ /** 
+ * AÑADIDO PARA LA PRACTICA 7
+ *
+ * Modificador para que una funcion solo la pueda ejecutar el coordinador o profesor.
+ *
+ * Se usa en notaFinal.
+ */
+ modifier soloCoordinadorProfesor() {
+  string memory _nombre = datosProfesor[msg.sender];
+  require(((msg.sender == coordinador) || (bytes(nombre).length != 0)) , "Solo permitido al coordinador o profesor");
+  _;
  }
 
  /**
