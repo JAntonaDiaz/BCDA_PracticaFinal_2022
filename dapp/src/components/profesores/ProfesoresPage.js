@@ -13,7 +13,7 @@ const ProfesoresPage = () => {
 
     const {useCacheSend} = useDrizzle();
     
-    const {send: sendAddProfesor, status: statusAddProfesor} = useCacheSend("Asignatura", "addProfesor");
+    const {send: sendAddProfesor} = useCacheSend("Asignatura", "addProfesor");
 
     const addProfesor = ev => {
         ev.preventDefault();

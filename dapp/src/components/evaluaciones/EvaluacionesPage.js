@@ -13,7 +13,7 @@ const EvaluacionesPage = () => {
     let [minimoEval, setMinimoEval] = useState(0);
 
     const {useCacheSend} = useDrizzle();
-    const {send: sendCreaEval, status: statusCreaEval} = useCacheSend("Asignatura", "creaEvaluacion");
+    const {send: sendCreaEval} = useCacheSend("Asignatura", "creaEvaluacion");
 
 
     const addEvaluacion = ev => {

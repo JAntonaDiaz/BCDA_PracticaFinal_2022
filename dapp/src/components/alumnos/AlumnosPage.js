@@ -26,8 +26,8 @@ const AlumnosPage = () => {
     const drizzleState = useDrizzleState(state => state);
     const addrAlumno = drizzleState.accounts[0];
     
-    const {send: sendAutomatricula, status: statusAutomatricula} = useCacheSend("Asignatura", "automatricula");
-    const {send: sendMatricula, status: statusMatricula} = useCacheSend("Asignatura", "matricular");
+    const {send: sendAutomatricula} = useCacheSend("Asignatura", "automatricula");
+    const {send: sendMatricula} = useCacheSend("Asignatura", "matricular");
     
     const automatricula = ev => {
         ev.preventDefault();
@@ -95,6 +95,7 @@ const AlumnosPage = () => {
             </NoSoyCoordinador>
             </NoSoyOwner>
             </NoSoyAlumno>
+            
             <SoyOwnerCoordinadoroProfesor>
                 <AlumnosList/>
             </SoyOwnerCoordinadoroProfesor>

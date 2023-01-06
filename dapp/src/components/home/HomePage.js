@@ -15,8 +15,8 @@ function HomePage() {
     const coordinador = useCacheCall("Asignatura","coordinador");
     const stateAsignatura = useCacheCall("Asignatura", "cerrada");
 
-    const {send: sendCoordinador, status: statusCoordinador } = useCacheSend("Asignatura", "setCoordinador");
-    const {send: sendCerrada, status: statusCerrada } = useCacheSend("Asignatura", "cerrar");
+    const {send: sendCoordinador} = useCacheSend("Asignatura", "setCoordinador");
+    const {send: sendCerrada} = useCacheSend("Asignatura", "cerrar");
 
     const setCoordinador = ev => {
         ev.preventDefault();

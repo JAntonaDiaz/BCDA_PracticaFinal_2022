@@ -1,9 +1,5 @@
-import {drizzleReactHooks} from '@drizzle/react-plugin'
-
-const {useDrizzle} = drizzleReactHooks;
 
 const CalificacionesHead = () => {
-    const {useCacheCall} = useDrizzle();
 
     let thead = [];
     //thead.push(<th key={"chae"}>#</th>);

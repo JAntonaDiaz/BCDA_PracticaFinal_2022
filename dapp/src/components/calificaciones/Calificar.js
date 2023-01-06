@@ -13,6 +13,8 @@ Si se usa useCacheSend, se envian varias transacciones cada vez que se hace un s
 El problema esta relacionado con actualizar el estado del stackIds dentro de la implementacion de ese hook.
  */
 
+/*
+
 const Calificar1 = () => {
     const {useCacheSend} = useDrizzle();
 
@@ -65,6 +67,7 @@ const Calificar1 = () => {
     </article>);
 };
 
+*/
 
 const Calificar2 = () => {
     const {drizzle} = useDrizzle();

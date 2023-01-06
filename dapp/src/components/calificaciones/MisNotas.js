@@ -4,7 +4,7 @@ const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
 const MisNotas = () =>
     <section className="AppMisNotas">
-        <h3>Mis Notas</h3>
+        <h3>Mis Calificaciones</h3>
         <table>
             <MisNotasHead/>
             <MisNotasBody/>

@@ -36005,12 +36005,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xf52EfdB8c21aeB1090dE987603346273FA9eb54F",
-      "transactionHash": "0x661c354f6589e7a182bb08d0cc8234d5863e7b7c10f77ed3bab9e3af5bb4abe3"
+      "address": "0x881FBDCb72BF0e47E6e3590c006D04d41B96F8C2",
+      "transactionHash": "0x43b9ff336dd9290a4f9faa8bb7492f7ef33d38af7d5d7cc1259f8c22dffc5148"
     }
   },
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-01-05T19:02:30.493Z",
+  "updatedAt": "2023-01-06T20:48:57.588Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

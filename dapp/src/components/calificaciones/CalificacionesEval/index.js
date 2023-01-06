@@ -8,7 +8,6 @@ const {useDrizzle} = drizzleReactHooks;
 
 const CalificacionesEvalPage = () => {
     const {useCacheCall} = useDrizzle();
-    let parrafo = document.querySelector('p');
     const evaluacionesLength = useCacheCall("Asignatura", "evaluacionesLength");
 
     // Conservar los valores metidos en el formulario

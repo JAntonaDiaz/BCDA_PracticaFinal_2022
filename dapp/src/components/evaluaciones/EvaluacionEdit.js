@@ -17,7 +17,7 @@ const EvaluacionEdit = () => {
     let [porcentajeEvalNew, setPorcentajeEvalNew] = useState(datos.porcentaje);
     let [minimoEvalNew, setMinimoEvalNew] = useState(datos.minimo);
 
-    const {send: sendEditEval, status: statusEditEval} = useCacheSend("Asignatura", "editarEvaluacion");
+    const {send: sendEditEval} = useCacheSend("Asignatura", "editarEvaluacion");
 
     const editEvaluacion = ev => {
         ev.preventDefault();

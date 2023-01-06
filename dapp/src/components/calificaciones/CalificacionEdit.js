@@ -16,7 +16,7 @@ const CalificacionEdit = () => {
     let [tipoNew, setTipo] = useState(datos.tipo);
     let [calificacionNew, setCalificacion] = useState(datos.calificacion);
 
-   const {send: sendCalificaEval, status: CalificaEval} = useCacheSend("Asignatura", "califica");
+   const {send: sendCalificaEval} = useCacheSend("Asignatura", "califica");
 
    const editCalificacion = ev => {
        ev.preventDefault();
